@@ -1,0 +1,33 @@
+{
+  "name": "jcc",
+  "version": "0.0.1-proto-1",
+  "description": "Javascript C Compiler",
+  "main": "src/index.js",
+  "scripts": {
+    "format:check": "npx prettier --check src/**/*.{html,js}",
+    "format:fix": "npx prettier --write src/**/*.{html,js}",
+    "format": "npm run format:check && npm run format:fix",
+    "lint": "npx eslint src/**/*.js",
+    "lint:ci": "npm run lint -- -f node_modules/eslint-formatter-azure-devops/index.js",
+    "build": "npx esbuild index.js --bundle --outfile=build/jcc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dr-vortex/jcc.git"
+  },
+  "author": "Dr. Vortex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dr-vortex/jcc/issues"
+  },
+  "homepage": "https://github.com/dr-vortex/jcc#readme",
+  "devDependencies": {
+    "esbuild": "^0.17.11",
+    "eslint": "^8.35.0",
+    "eslint-formatter-azure-devops": "^1.1.0",
+    "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "pyodide": "^0.22.1"
+  }
+}
